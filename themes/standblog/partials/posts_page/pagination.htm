@@ -1,0 +1,19 @@
+{% if posts.lastPage > 1 %}
+    <div class="col-lg-12">
+        <ul class="page-numbers">
+            {% if posts.currentPage > 1 %}
+                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}"><i class="fa fa-angle-double-left"></i></a></li>
+            {% endif %}
+
+            {% for page in 1..posts.lastPage %}
+                <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                    <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                </li>
+            {% endfor %}
+
+            {% if posts.lastPage > posts.currentPage %}
+                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}"><i class="fa fa-angle-double-right"></i></a></li>
+            {% endif %}
+        </ul>
+    </div>
+{% endif %}

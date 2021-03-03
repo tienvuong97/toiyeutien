@@ -1,0 +1,39 @@
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsFilter = "highlight"
+postsPerPage = 10
+noPostsMessage = "ncc.blog::lang.settings.posts_no_posts_default"
+sortOrder = "published_at desc"
+categoryPage = "posts-category"
+postPage = "post-detail"
+==
+<div class="main-banner header-text">
+  <div class="container-fluid">
+    <div class="owl-banner owl-carousel owl-loaded owl-drag">
+      {% for post in posts %}
+      {% set image = post.featured_images.first %}
+      {% if image %}
+      <div class="item">
+        <img style="filter: brightness(60%)" height="400" width="420" src="{{ image.thumb(420, fit) }}" alt="">
+        <div class="item-content">
+          <div class="main-content">
+            <div class="meta-category">
+            {% for category in post.categories %}
+            <a href="#"><span>{{ category.name }}</span></a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+            </div>
+            <a href="{{ post.url }}"><h5 class="text-white">{{ post.title|raw }}</h5></a>
+            <ul class="post-info">            
+              <li><a class="text-white-50" href="#">{{ post.user.first_name }}</a></li>
+              <li><a class="text-white-50" href="#">{{ post.published_at|date('M d, Y') }}</a></li>
+              <li><a class="text-white-50" href="#">{{post.comments.count}} {{comment_name}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

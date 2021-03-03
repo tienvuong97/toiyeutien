@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ncc.user::lang.group.label
+
+# Model Form Field configuration
+form: $/ncc/user/models/usergroup/fields.yaml
+
+# Model Class name
+modelClass: Ncc\User\Models\UserGroup
+
+# Default redirect location
+defaultRedirect: ncc/user/usergroups
+
+# Create page
+create:
+    title: ncc.user::lang.groups.create_title
+    redirect: ncc/user/usergroups/update/:id
+    redirectClose: ncc/user/usergroups
+
+# Update page
+update:
+    title: ncc.user::lang.groups.update_title
+    redirect: ncc/user/usergroups
+    redirectClose: ncc/user/usergroups
+
+# Preview page
+preview:
+    title: ncc.user::lang.groups.update_title

@@ -1,0 +1,50 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: ncc.user::lang.user.id
+        invisible: true
+
+    username:
+        label: ncc.user::lang.user.username
+        searchable: true
+        invisible: true
+
+    name:
+        label: ncc.user::lang.user.name
+        searchable: true
+
+    surname:
+        label: ncc.user::lang.user.surname
+        searchable: true
+        invisible: true
+
+    email:
+        label: ncc.user::lang.user.email
+        searchable: true
+
+    created_at:
+        label: ncc.user::lang.user.created_at
+        type: timetense
+
+    last_seen:
+        label: ncc.user::lang.user.last_seen
+        type: timetense
+
+    is_guest:
+        label: ncc.user::lang.user.is_guest
+        type: switch
+        invisible: true
+
+    created_ip_address:
+        label: ncc.user::lang.user.created_ip_address
+        searchable: true
+        invisible: true
+
+    last_ip_address:
+        label: ncc.user::lang.user.last_ip_address
+        searchable: true
+        invisible: true

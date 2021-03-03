@@ -1,0 +1,29 @@
+==
+<?php
+function onInit()
+		{
+		    Lang::addNamespace('theme', 'themes/standblog/lang');
+		    App::setLocale('en'); // set locale you want
+		}
+?>
+==
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% partial "html_base/meta_head" %}
+	</head>
+	<body>
+        {% partial 'all_page/preloader' %}
+		{% partial 'all_page/header' %}
+		<div class="heading-page header-text">
+		</div>
+
+		{% page %}
+		
+		<footer>
+            {% partial 'all_page/footer' %} 
+        </footer>
+            {% partial 'html_base/scripts' %}
+            {% framework extras %}
+	</body>
+</html>

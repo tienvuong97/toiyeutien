@@ -1,0 +1,29 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('ncc/contact/contact') ?>"><?= e(trans('ncc.contact::lang.contact.menu_label')) ?></a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+             <a href="<?= Backend::url('ncc/contact/contact') ?>" class="btn btn-primary"><?= e(trans('ncc.contact::lang.contact.back')) ?></a>
+            </div>
+        </div>
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('ncc/contact/contact') ?>" class="btn btn-default"><?= e(trans('ncc.contact::lang.contact.return_to_contacts')) ?></a></p>
+
+<?php endif ?>

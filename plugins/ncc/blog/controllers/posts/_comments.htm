@@ -1,0 +1,44 @@
+<?php if(isset($comments)): ?>
+    <table class="table data" data-control="rowlink">
+        <thead>
+            <tr>
+                <th class="sort-desc active list-cell-name-id list-cell-type-text  ">
+                    <a href="javascript:;" >
+                    ID  </a>
+                </th>
+                <th class="sort-desc list-cell-name-name list-cell-type-text  ">
+                    <a href="javascript:;" >
+                    Name</a>
+                </th>
+                <th class="list-cell-name-email list-cell-type-text  ">
+                    <span>Email</span>
+                </th>
+                <th class="list-cell-name-content list-cell-type-text  ">
+                    <span>Content</span>
+                </th>
+                <th class="sort-desc list-cell-name-created_at list-cell-type-text  ">
+                    <a href="javascript:;" >
+                    Created_at</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($comments as $comment): ?>
+            <tr class="rowlink" tabindex="0">
+                <td class="list-cell-index-1 list-cell-name-id list-cell-type-text   ">
+                    <a href="#" style="display: none;"><?php echo $comment->id; ?> </a>
+                </td>
+                <td class="list-cell-index-3 list-cell-name-name list-cell-type-text   ">
+                    <?php echo $comment->name; ?> </td>
+                <td class="list-cell-index-4 list-cell-name-email list-cell-type-text   ">
+                    <?php echo $comment->email; ?> </td>
+                <td class="list-cell-index-5 list-cell-name-content list-cell-type-text   ">
+                    <?php echo $comment->content; ?></td>
+                <td class="list-cell-index-6 list-cell-name-created_at list-cell-type-text   ">
+                    <?php echo $comment->created_at; ?> </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<?php endif; ?>

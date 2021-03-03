@@ -1,0 +1,25 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ncc.user::lang.user.label
+
+# Model Form Field configuration
+form: $/ncc/user/models/user/fields.yaml
+
+# Model Class name
+modelClass: Ncc\User\Models\User
+
+# Default redirect location
+defaultRedirect: ncc/user/users
+
+# Create page
+create:
+    redirect: ncc/user/users/preview/:id
+    redirectClose: ncc/user/users
+
+# Update page
+update:
+    redirect: ncc/user/users/update/:id
+    redirectClose: ncc/user/users/preview/:id

@@ -1,0 +1,41 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    # Page title
+    title: ncc.blog::lang.posts.import_post
+
+    # Import List Column configuration
+    list: $/ncc/blog/models/postimport/columns.yaml
+
+    # Import Form Field configuration
+    form: $/ncc/blog/models/postimport/fields.yaml
+
+    # Import Model class
+    modelClass: Ncc\Blog\Models\PostImport
+
+    # Redirect when finished
+    redirect: ncc/blog/posts
+
+    # Required permissions
+    permissions: ncc.blog.access_import_export
+
+export:
+    # Page title
+    title: ncc.blog::lang.posts.export_post
+
+    # Output file name
+    fileName: posts.csv
+
+    # Export List Column configuration
+    list: $/ncc/blog/models/postexport/columns.yaml
+
+    # Export Model class
+    modelClass: Ncc\Blog\Models\PostExport
+
+    # Redirect when finished
+    redirect: ncc/blog/posts
+
+    # Required permissions
+    permissions: ncc.blog.access_import_export

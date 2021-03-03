@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: ncc.blog::lang.blog.create_post
+form: ~/plugins/ncc/blog/models/post/fields.yaml
+modelClass: Ncc\Blog\Models\Post
+defaultRedirect: ncc/blog/posts
+
+create:
+    redirect: ncc/blog/posts/update/:id
+    redirectClose: ncc/blog/posts
+
+update:
+    redirect: ncc/blog/posts
+    redirectClose: ncc/blog/posts

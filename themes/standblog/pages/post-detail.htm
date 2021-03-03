@@ -1,0 +1,51 @@
+title = "Post detail"
+url = "/post-detail/:slug?"
+layout = "page"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogShare]
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "posts-category"
+
+[blogCommentForm]
+
+[account]
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+
+[session]
+security = "all"
+==
+<?php
+function onEnd()
+{
+	//Changing Title by Post's name
+	$post = $this->components['blogPost']->post;
+    if($post){
+    	$post=$post->title;
+    	$this->page->title = "Post details | ".$post;
+	   }
+    $this['comment_name'] = trans('theme::lang.comment.name_comment');
+}
+?>
+==
+<section class="blog-posts grid-system mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+      	<div class="all-blog-posts">
+      		<div class="row">
+            {% partial 'posts_page/post_detail' %}  
+            {% partial 'posts_page/comments' %}
+          </div>
+   		  </div>
+      </div>
+      {% partial 'all_page/side_bar' %} 
+    </div>
+  </div>
+</section>

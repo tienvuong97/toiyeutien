@@ -1,0 +1,18 @@
+# ===================================
+#  Field Definitions
+# ===================================
+tabs:
+    fields:  
+        allow_receive_mail:
+            span: left
+            label: ncc.contact::lang.contact.allow_receive_mail_label
+            type: switch
+            default: 0
+            tab: ncc.contact::lang.contact.config_tab
+        email_receive:
+            span: left
+            label: ncc.contact::lang.contact.email_label
+            placeholder: ncc.contact::lang.contact.email_des_label
+            type: email
+            tab: ncc.contact::lang.contact.config_tab
+            required: true

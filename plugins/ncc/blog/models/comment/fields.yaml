@@ -1,0 +1,31 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ncc.blog::lang.comment.id_label
+        disabled: true
+        span: auto
+    posts:
+        label: ncc.blog::lang.comment.posts_label
+        type: relation
+        select: title
+        disabled: true
+        span: auto
+    name:
+        label: ncc.blog::lang.comment.name_label
+        span: auto
+        type: text
+        disabled: true
+    email:
+        label: ncc.blog::lang.comment.email_label
+        span: auto
+        type: text
+        disabled: true
+    content:
+        label: ncc.blog::lang.comment.content_label
+        size: ''
+        span: auto
+        type: textarea
+        disabled: true

@@ -1,0 +1,29 @@
+# ===================================
+# Cập nhật form
+# ===================================
+fields:
+    id:
+        label: ncc.contact::lang.contact.id_label
+        disabled: true
+        span: auto
+    name:
+        label: ncc.contact::lang.contact.name_label
+        span: auto
+        type: text
+        disabled: true
+    email:
+        label: ncc.contact::lang.contact.email_label
+        span: auto
+        type: text
+        disabled: true
+    subject:
+        label: ncc.contact::lang.contact.subject_label
+        span: auto
+        type: text
+        disabled: true
+    content:
+        label: ncc.contact::lang.contact.message_label
+        size: ''
+        span: auto
+        type: textarea
+        disabled: true

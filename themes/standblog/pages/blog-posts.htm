@@ -1,0 +1,33 @@
+title = "Blog Posts"
+url = "/blogposts/:page?"
+layout = "page"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 6
+noPostsMessage = "ncc.blog::lang.settings.posts_no_posts_default"
+sortOrder = "published_at desc"
+categoryPage = "posts-category"
+postPage = "post-detail"
+
+[session]
+security = "all"
+==
+<section class="blog-posts grid-system mt-5">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+	        <div class="all-blog-posts">
+  		        <div class="row">
+    	        {% partial 'posts_page/posts_list' %}
+                </div>
+           	</div>
+        </div>    			      			
+ 		{% partial 'all_page/side_bar' %}
+    </div>
+  </div>
+</section>

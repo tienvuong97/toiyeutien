@@ -1,0 +1,131 @@
+title = "Contact"
+url = "/contact"
+layout = "page"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[contact]
+
+[session]
+security = "all"
+==
+<?php
+public function onStart()
+	{
+        $this['send_message']         = trans('theme::lang.contact.contact_send_message');
+        $this['contact_name']         = trans('theme::lang.contact.contact_name');
+        $this['contact_email']        = trans('theme::lang.contact.contact_email');
+        $this['contact_subject']      = trans('theme::lang.contact.contact_subject');
+        $this['contact_message']      = trans('theme::lang.contact.contact_message');
+        $this['contact_heading']      = trans('theme::lang.contact.contact_heading');
+        $this['contact_info']         = trans('theme::lang.contact.contact_info');
+        $this['contact_info_phone']   = trans('theme::lang.contact.contact_info_phone');
+        $this['contact_info_email']   = trans('theme::lang.contact.contact_info_email');
+        $this['contact_info_address'] = trans('theme::lang.contact.contact_info_address');
+    }
+?>
+==
+<section class="contact-us">
+    <div class="container">
+        <div class="row">
+            <!--CONTACT FIELD-->
+            <div class="col-lg-12">
+                <div class="down-contact">
+                    <div class="row">
+                        <!--CONTACT FORM-->
+                        <div class="col-lg-8">
+                            <div class="sidebar-item contact-form">
+                                <div class="sidebar-heading">
+                                  <h2>{{ contact_heading }}</h2>
+                                </div>
+                                <div>
+                                    {% flash success %}
+                                        <p data-control="flash-message" data-interval="5" class="success">
+                                             {{ message }}
+                                        </p>
+                                    {% endflash %}
+                                </div>
+                                <div class="content">
+                                  <form id="contact"
+                                  method="post"
+                                  data-request="onSave"
+                                  data-request-validate
+                                  data-request-flash>
+                                        {{ form_token() }}
+                                        {{ form_sessionKey() }}
+                                    <div class="row">
+                                      <div class="col-md-6 col-sm-12">
+                                        <fieldset>
+                                          <input name="name" type="text" id="name" placeholder="{{ contact_name }}">
+                                          <p data-validate-for="name" class="text-danger"></p>
+                                        </fieldset>
+                                      </div>
+                                      <div class="col-md-6 col-sm-12">
+                                        <fieldset>
+                                          <input name="email" type="text" id="email" placeholder="{{ contact_email}}">
+                                          <p data-validate-for="email" class="text-danger"></p>
+                                        </fieldset>
+                                      </div>
+                                      <div class="col-md-12 col-sm-12">
+                                        <fieldset>
+                                          <input name="subject" type="text" id="subject" placeholder="{{ contact_subject }}">
+                                          <p data-validate-for="subject" class="text-danger"></p>
+                                        </fieldset>
+                                      </div>
+                                      <div class="col-lg-12">
+                                        <fieldset>
+                                          <textarea name="content" rows="6" id="message" placeholder="{{ contact_message }}"></textarea>
+                                          <p data-validate-for="content" class="text-danger"></p>
+                                        </fieldset>
+                                      </div>
+                                      <div class="col-lg-12">
+                                        <fieldset>
+                                          <button type="submit" id="form-submit" class="main-button">
+                                           {{ send_message}}
+                                          </button>
+                                        </fieldset>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                        </div>
+                        <!-- CONTACT INFORMATION-->
+                        <div class="col-lg-4">
+                            <div class="sidebar-item contact-information">
+                                <div class="sidebar-heading">
+                                    <h2>{{ contact_info }}</h2>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li>
+                                            <h5>090-484-8080</h5>
+                                            <span>{{ contact_info_phone }}</span>
+                                        </li>
+                                        <li>
+                                            <h5>info@company.com</h5>
+                                            <span>{{ contact_info_email }}</span>
+                                        </li>
+                                        <li>
+                                            <h5>123 Aenean id posuere dui,
+                                                <br>Praesent laoreet 10660</h5>
+                                            <span>{{ contact_info_address }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--MAP-->
+            <div class="col-lg-12">
+                <div id="map">
+                    <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

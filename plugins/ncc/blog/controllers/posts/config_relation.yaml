@@ -1,0 +1,9 @@
+comments:
+    label: Comment    
+    view:
+        list: $/ncc/blog/models/comment/columns.yaml
+        toolbarButtons: delete
+    manage:
+        form: $/ncc/blog/models/comment/fields.yaml
+        recordsPerPage: 10
+    

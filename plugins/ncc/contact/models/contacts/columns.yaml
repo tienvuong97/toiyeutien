@@ -1,0 +1,38 @@
+# ===================================
+#  Hiển thị ra trang admin
+# ===================================
+
+columns:
+    id:
+        label: ncc.contact::lang.contact.id_label
+        searchable: true
+    name:
+        label: ncc.contact::lang.contact.name_label
+        type: text
+        searchable: true
+        invisible: true
+        sortable: true
+    email:
+        label: ncc.contact::lang.contact.email_label
+        type: text
+        searchable: true
+        invisible: true
+        sortable: true
+    subject:
+        label: ncc.contact::lang.contact.subject_label
+        type: text
+        searchable: true
+        invisible: true
+        sortable: true
+    content:
+        label: ncc.contact::lang.contact.message_label
+        type: text
+        searchable: true
+        invisible: true
+        sortable: true
+    created_at:
+        label: ncc.contact::lang.contact.created_at_label
+        type: text
+        searchable: true
+        invisible: true
+        sortable: true

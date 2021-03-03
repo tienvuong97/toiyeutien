@@ -1,0 +1,10 @@
+{% if __SELF__.tags|length > 0 %}
+<ul>
+    {% for tag in __SELF__.tags %}
+        <li><a href="{{ tag.url }}">{{ tag.name }}</a></li>
+    {% endfor %}
+</ul>
+
+{% else %}
+    <p>No tags were found.</p>
+{% endif %}

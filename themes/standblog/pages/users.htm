@@ -1,0 +1,80 @@
+title = "Manage"
+url = "/user"
+layout = "page"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[session]
+security = "user"
+redirect = "login"
+
+[resetPassword]
+paramCode = "code"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+==
+<?php
+public function onStart()
+    {
+        $this['profile_save']         = trans('theme::lang.profile.profile_save');
+        $this['profile_form_title']   = trans('theme::lang.profile.profile_form_title');
+    }
+?>
+==
+<section class="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="down-contact">
+                    <div class="row">
+                        <div class="col-lg-6  mx-auto">
+                           <div class="sidebar-item contact-form">
+                                <div class="sidebar-heading">
+                                  <h2>{{ profile_form_title }}</h2>
+                                </div>
+                                <div>
+                                    {% flash success %}
+                                        <p data-control="flash-message" data-interval="5" class="success">
+                                             {{ message }}
+                                        </p>
+                                    {% endflash %}      
+                                </div>
+                                <div class="content">
+                                  <form method="post" data-request="onUpdate" data-request-validate data-request-flash>
+                                        {{ form_token() }}
+                                        {{ form_sessionKey() }}
+                                    <div class="row">
+                                      <div class="col-md-12 col-sm-12">
+                                        <fieldset>
+                                          <input name="name" type="text" value="{{ user.name }}">
+                                          <p data-validate-for="name" class="text-danger"></p>
+                                        </fieldset>
+                                      </div>
+                                      <div class="col-md-12 col-sm-12">
+                                        <fieldset>
+                                          <input name="email" type="text" value="{{ user.email }}" disabled>
+                                          <p data-validate-for="email" class="text-danger"></p>
+                                        </fieldset>
+                                      </div>
+                                      <div class="col-lg-12">
+                                        <fieldset>
+                                          <button type="submit" id="form-submit" class="main-button">
+                                          {{ profile_save }}
+                                          </button>
+                                        </fieldset>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

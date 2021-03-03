@@ -1,0 +1,8 @@
+name: 'ToiYeuTien'
+description: 'Theme for ToiYeuTien Project'
+author: 'NCC Plus'
+homepage: ''
+code: toi_yeu_tien
+form: fields.yaml
+require:
+    - RainLab.Blog

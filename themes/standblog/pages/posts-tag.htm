@@ -1,0 +1,36 @@
+title = "Posts by Tag"
+url = "/posts-tag/:slug/:page?"
+layout = "page"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPostsByTag]
+tag = "{{ :slug }}"
+pageNumber = "{{ :page }}"
+postsPerPage = 6
+sortOrder = "published_at desc"
+categoryPage = "posts-category"
+postPage = "post-detail"
+==
+<?php
+public function onStart(){
+  $this['comment_name'] = trans('theme::lang.comment.name_comment');
+  $this['no_post_massage'] = trans('theme::lang.posts.no_post_message');
+}
+?>
+==
+<section class="blog-posts grid-system">
+  <div class="container">
+    <div class="row">
+    	 <div class="col-lg-8">
+	        <div class="all-blog-posts">
+	            <div class="row"> {% component 'blogPostsByTag' %}
+                {% partial 'posts_page/posts_list'%}
+                </div>
+           	</div>
+        </div>
+        {% partial 'all_page/side_bar' %}
+    </div>
+  </div>
+</section>

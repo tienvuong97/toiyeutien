@@ -1,0 +1,36 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ncc.blog::lang.comment.id_label
+        searchable: true
+    posts:
+        label: ncc.blog::lang.comment.posts_label
+        relation: posts
+        select: title
+        searchable: true
+        sortable: false
+    name:
+        label: ncc.blog::lang.comment.name_label
+        type: text
+        searchable: true
+        invisible: true
+        sortable: true
+    email:
+        label: ncc.blog::lang.comment.email_label
+        type: text
+        searchable: true
+        invisible: true
+        sortable: false
+    content:
+        label: ncc.blog::lang.comment.content_label
+        type: text
+        invisible: true
+        sortable: false
+    created_at:
+        label: ncc.blog::lang.comment.created_at_label
+        type: text
+        invisible: true
+        sortable: true

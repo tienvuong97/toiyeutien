@@ -1,0 +1,100 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    title:
+        label: ncc.blog::lang.post.title
+        span: left
+        placeholder: ncc.blog::lang.post.title_placeholder
+
+    slug:
+        label: ncc.blog::lang.post.slug
+        span: right
+        placeholder: ncc.blog::lang.post.slug_placeholder
+        preset:
+            field: title
+            type: slug
+
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+
+secondaryTabs:
+    stretch: true
+    fields:
+        content:
+            tab: ncc.blog::lang.post.tab_edit
+            type: Ncc\Blog\FormWidgets\BlogMarkdown
+            cssClass: field-slim blog-post-preview
+            stretch: true
+            mode: split
+
+        categories:
+            tab: ncc.blog::lang.post.tab_categories
+            type: relation
+            commentAbove: ncc.blog::lang.post.categories_comment
+            placeholder: ncc.blog::lang.post.categories_placeholder
+
+        published:
+            tab: ncc.blog::lang.post.tab_manage
+            label: ncc.blog::lang.post.published
+            span: left
+            type: checkbox
+
+        user:
+            tab: ncc.blog::lang.post.tab_manage
+            label: ncc.blog::lang.post.published_by
+            span: left
+#            cssClass: checkbox-align
+            type: relation
+            nameFrom: login
+            emptyOption: ncc.blog::lang.post.current_user
+
+        tags:
+            tab: ncc.blog::lang.post.tab_manage
+            span: right
+            mode: relation
+            type: taglist
+            label: ncc.blog::lang.tags.add_tags
+
+        published_at:
+            tab: ncc.blog::lang.post.tab_manage
+            label: ncc.blog::lang.post.published_on
+            span: left
+#            cssClass: checkbox-align
+            type: datepicker
+            mode: datetime
+            trigger:
+                action: enable
+                field: published
+                condition: checked
+
+        highlight:
+            tab: ncc.blog::lang.post.tab_manage
+            label: ncc.blog::lang.post.highlight_post
+            span: right
+            type: checkbox
+
+        excerpt:
+            tab: ncc.blog::lang.post.tab_manage
+            label: ncc.blog::lang.post.excerpt
+            type: textarea
+            size: small
+            span: left
+
+        featured_images:
+            tab: ncc.blog::lang.post.tab_manage
+            label: ncc.blog::lang.post.featured_images
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200
+
+        comments:
+            tab: ncc.blog::lang.comment.name_comment
+            label: ncc.blog::lang.comment.list_comment
+            type: partial
+            path: comments

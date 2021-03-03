@@ -1,0 +1,31 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('ncc/blog/comments') ?>"><?= e(trans('ncc.blog::lang.comment.name_comment')) ?></a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <button class="btn btn-primary"  type="button">
+                 <a href="<?= Backend::url('ncc/blog/comments') ?>" class="btn-primary"><?= e(trans('ncc.blog::lang.comment.back')) ?></a>
+                </button>
+            </div>
+        </div>
+        
+    <?= Form::close() ?>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('ncc/blog/comments') ?>" class="btn btn-default"><?= e(trans('ncc.blog::lang.comment.return_to_comments')) ?></a></p>
+
+<?php endif ?>

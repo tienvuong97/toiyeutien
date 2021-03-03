@@ -1,0 +1,26 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Comment
+
+# Model Form Field configuration
+form: $/ncc/blog/models/comment/fields.yaml
+
+# Model Class name
+modelClass: Ncc\Blog\Models\Comment
+
+# Default redirect location
+defaultRedirect: ncc/blog/comments
+
+
+# Update page
+update:
+    title: Detail Comment
+    redirect: ncc/blog/comments
+    redirectClose: ncc/blog/comments
+
+# Preview page
+preview:
+    title: Preview Comment

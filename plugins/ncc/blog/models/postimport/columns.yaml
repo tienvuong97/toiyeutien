@@ -1,0 +1,16 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id: ID
+    title: ncc.blog::lang.post.title
+    content: ncc.blog::lang.post.content
+    excerpt: ncc.blog::lang.post.excerpt
+    slug: ncc.blog::lang.post.slug
+    categories: ncc.blog::lang.post.categories
+    author_email: ncc.blog::lang.post.author_email
+    created_at: ncc.blog::lang.post.created_date
+    updated_at: ncc.blog::lang.post.updated_date
+    published_at: ncc.blog::lang.post.published_date

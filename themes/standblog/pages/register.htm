@@ -1,0 +1,104 @@
+title = "Register"
+url = "/register"
+layout = "page"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[session]
+security = "all"
+
+[account]
+redirect = "index"
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+==
+<?php
+public function onStart()
+    {
+        $this['title']                = trans('theme::lang.register.register_title');
+        $this['form_title']           = trans('theme::lang.login.login_title');
+        $this['user_email']           = trans('theme::lang.user.user_email');
+        $this['user_password']        = trans('theme::lang.user.user_password');
+        $this['user_fullname']        = trans('theme::lang.user.user_fullname');
+        $this['user_username']        = trans('theme::lang.user.user_username');
+        $this['confirm_password']     = trans('theme::lang.user.confirm_password');
+    }
+?>
+==
+{% if canRegister %}
+  <section class="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="down-contact">
+                    <div class="row">
+                        <div class="col-lg-6  mx-auto">
+                          <div class="sidebar-item contact-form">
+                            <div class="sidebar-heading">
+                              <h2>{{ title }}</h2>
+                            </div>
+                            <div>
+                                {% flash %}
+                                    <p data-control="flash-message" data-interval="5" class="success">
+                                         {{ message }}
+                                    </p>
+                                {% endflash %}      
+                            </div>
+                            <div class="content">
+                              <form method="post" data-request="onRegister" data-request-validate data-request-flash>
+                                    {{ form_token() }}
+                                    {{ form_sessionKey() }}
+                                <div class="row">
+                                  <div class="col-md-12 col-sm-12">
+                                    <fieldset>
+                                      <input name="name" type="text" placeholder="{{user_fullname}}">
+                                      <p data-validate-for="name" class="text-danger"></p>
+                                    </fieldset>
+                                  </div>
+                                   {% if loginAttribute == "username" %}
+                                  <div class="col-md-12 col-sm-12">
+                                    <fieldset>
+                                      <input name="username" type="text" placeholder="{{user_username}}">
+                                      <p data-validate-for="username" class="text-danger"></p>
+                                    </fieldset>
+                                  </div>
+                                   {% endif %}
+                                  <div class="col-md-12 col-sm-12">
+                                    <fieldset>
+                                      <input name="email" type="text" placeholder="{{user_email}}">
+                                      <p data-validate-for="email" class="text-danger"></p>
+                                    </fieldset>
+                                  </div>
+                                  <div class="col-md-12 col-sm-12">
+                                    <fieldset>
+                                      <input name="password" type="password" placeholder="{{user_password}}">
+                                      <p data-validate-for="password" class="text-danger"></p>
+                                    </fieldset>
+                                  </div>
+                                  <div class="col-md-12 col-sm-12">
+                                    <fieldset>
+                                      <input name="password_confirmation" type="password" placeholder="{{confirm_password}}">
+                                      <p data-validate-for="password_confirmation" class="text-danger"></p>
+                                    </fieldset>
+                                  </div>
+                                  <div class="col-lg-12">
+                                    <fieldset>
+                                      <button type="submit" id="form-submit" class="main-button">
+                                       {{ title }}
+                                      </button>
+                                    </fieldset>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  {% endif %}

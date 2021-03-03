@@ -1,0 +1,35 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    title:
+        label: ncc.blog::lang.post.title
+        searchable: true
+
+    categories:
+        label: ncc.blog::lang.post.categories
+        relation: categories
+        select: name
+        searchable: true
+        sortable: false
+
+    created_at:
+        label: ncc.blog::lang.post.created
+        type: date
+        invisible: true
+
+    updated_at:
+        label: ncc.blog::lang.post.updated
+        type: date
+        invisible: true
+
+    published_at:
+        label: ncc.blog::lang.post.published
+        type: date
+
+    highlight:
+        label: ncc.blog::lang.post.highlight_post
+        type: partial
+        path: ~/plugins/ncc/blog/models/post/_highlight_column.htm

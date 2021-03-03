@@ -1,0 +1,20 @@
+==
+<?php
+function onEnd()
+{
+    $this['recent_title'] = trans('theme::lang.side_bar.recent_title');
+    $this['categories_title'] = trans('theme::lang.side_bar.categories_title');
+    $this['tags_title'] = trans('theme::lang.side_bar.tags_title');
+}
+?>
+==
+<div class="col-lg-4">
+    <div class="sidebar">
+      <div class="row">	  
+	    {% partial 'side_bar/search_form' %}
+	    {% partial 'side_bar/recent_posts' %}
+	    {% partial 'side_bar/categories' %}
+	    {% partial 'side_bar/tags' %} 
+      </div>
+    </div>
+</div>

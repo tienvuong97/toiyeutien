@@ -1,0 +1,51 @@
+.blog-posts .comments ul li .right-content {
+     margin-left:0px !important;
+     padding-bottom: 10px !important;
+}
+.contact-us .contact-form input {
+	text-transform: none;
+	margin-bottom: 10px;
+}
+.contact-us .contact-form p {
+     margin-bottom: 10px;
+     margin-top: -12px;
+}
+.contact-us .contact-form textarea {
+	text-transform: none;
+	margin-bottom: 10px;
+}
+.post-content img {
+     width: 100%;
+     height: auto;
+}
+.post-content div {
+     width: 100%;
+     height: auto;
+}
+.post-content p {
+     width: 100%;
+     height: auto;
+     padding: 5px;
+     margin: 0;
+}
+.post-content {
+     font-size: 15px;
+     font-weight: 400;
+     color: #7a7a7a;
+     margin: 25px 0px;
+     padding: 25px 0px;
+     border-top: 1px solid #eee;
+     border-bottom: 1px solid #eee;
+}
+.blog-posts .submit-comment input {
+     text-transform: none;
+	margin-bottom: 10px;
+ }
+ .blog-posts .submit-comment p {
+     margin-bottom: 10px;
+     margin-top: -12px;
+ }
+ .blog-posts .submit-comment textarea {
+	text-transform: none;
+	margin-bottom: 10px;
+}

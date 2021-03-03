@@ -1,0 +1,13 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Tag
+        searchable: true
+
+    post_count:
+        label: Posts
+        relation: posts
+        useRelationCount: true

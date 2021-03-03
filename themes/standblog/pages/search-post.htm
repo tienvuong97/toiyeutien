@@ -1,0 +1,42 @@
+title = "Search Post"
+url = "/search-post/:search?"
+layout = "page"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogsearchResult]
+searchTerm = "{{ :search }}"
+pageNumber = "{{ :page }}"
+disableUrlMapping = 0
+hightlight = 1
+postsPerPage = 6
+noPostsMessage = "ncc.blog::lang.settings.posts_no_posts_default"
+sortOrder = "published_at desc"
+categoryPage = "posts-category"
+postPage = "post-detail"
+==
+<?php
+function onEnd()
+{
+    $this['title'] = trans('theme::lang.title_bar.search_post_title');
+    $this['subtitle'] = $this->components['blogsearchResult']->searchTerm; 
+}
+?>
+==
+<section class="blog-posts grid-system mt-5">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+	        <div class="all-blog-posts">
+                <h3 class="bg-light ml-auto mr-auto pt-2 pb-2 pr-5 pl-5 mb-5">{{ title }}: {{ searchTerm }}</h3>
+  		        <div class="row">
+                    {% set posts = __SELF__.posts %}
+    	            {% partial 'posts_page/posts_list' %}
+                </div>
+           	</div>
+        </div>
+      	{% partial 'all_page/side_bar' %}
+    </div>
+  </div>
+</section>

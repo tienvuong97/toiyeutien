@@ -1,0 +1,23 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: ncc.blog::lang.category.name
+        placeholder: ncc.blog::lang.category.name_placeholder
+        span: left
+
+    slug:
+        label: ncc.blog::lang.category.slug
+        span: right
+        placeholder: ncc.blog::lang.category.slug_placeholder
+        preset: name
+
+    description:
+        label: 'ncc.blog::lang.category.description'
+        size: large
+        oc.commentPosition: ''
+        span: full
+        type: textarea

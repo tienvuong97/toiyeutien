@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Tag
+
+# Model Form Field configuration
+form: $/ncc/blog/models/tag/fields.yaml
+
+# Model Class name
+modelClass: Ncc\Blog\Models\Tag
+
+# Default redirect location
+defaultRedirect: ncc/blog/tags
+
+# Create page
+create:
+    title: Create Tag
+    redirect: ncc/blog/tags/update/:id
+    redirectClose: ncc/blog/tags
+
+# Update page
+update:
+    title: Edit Tag
+    redirect: ncc/blog/tags
+    redirectClose: ncc/blog/tags
+
+# Preview page
+preview:
+    title: Preview Tag

@@ -1,0 +1,25 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ncc.contact::lang.contact.menu_label
+
+# Model Form Field configuration
+form: $/ncc/contact/models/contacts/fields.yaml
+
+# Model Class name
+modelClass: Ncc\Contact\Models\Contacts
+
+# Default redirect location
+defaultRedirect: ncc/contact/contact
+
+# Update page
+update:
+    title: ncc.contact::lang.contact.detail_contact
+    redirect: ncc/contact/contact
+    redirectClose: ncc/contact/contact
+
+# Preview page
+preview:
+    title: ncc.contact::lang.contact.preview_contact
